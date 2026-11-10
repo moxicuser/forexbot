@@ -1,0 +1,30 @@
+[project]
+name = "forexbot"
+version = "0.1.0"
+description = "A safety-first, modular retail forex trading bot"
+requires-python = ">=3.11"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+forexbot = "forexbot.cli:main"
+forexbot-dashboard = "forexbot.dashboard:main"
+forexbot-watchdog = "forexbot.watchdog:main"
+
+[project.optional-dependencies]
+mt5 = ["MetaTrader5>=5.0"]
+dev = ["pytest>=8.0"]
+dashboard = ["fastapi>=0.100", "uvicorn>=0.20"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]

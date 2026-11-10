@@ -1,0 +1,17 @@
+[bot]
+mode = "backtest"
+
+[risk]
+account_balance = 10000.0
+risk_per_trade = 0.01
+max_daily_loss = 0.03
+max_drawdown = 0.10
+max_open_trades = 1
+
+[filters]
+max_spread_points = 30.0
+start_hour_utc = 0
+end_hour_utc = 24
+
+[mt5]
+server_utc_offset_hours = "auto"
